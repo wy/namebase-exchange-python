@@ -2,6 +2,9 @@ Namebase Exchange Api for Python
 ==
 
 <p>
+<a href="https://namebase-exchange-python.readthedocs.io/en/latest/">
+<img src="https://readthedocs.org/projects/namebase-exchange-python/badge/?version=latest" alt="Open Issues"/>
+</a>
 <a href="/issues">
 <img src="https://img.shields.io/github/issues/wy/namebase-exchange-python" alt="Open Issues"/>
 </a>
@@ -34,6 +37,10 @@ On top of the raw APIs, we also provide the convenience functions:
 - Python 3.6 or greater
 
 ### Install
+
+> pip install namebase_exchange
+
+### Usage
 
 > from namebase_exchange import *
 >

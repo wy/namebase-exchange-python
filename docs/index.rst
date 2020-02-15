@@ -25,11 +25,3 @@ Exchange API over its REST endpoints.
    overview
    exchange
 
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
