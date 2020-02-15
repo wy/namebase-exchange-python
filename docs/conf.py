@@ -66,3 +66,6 @@ html_static_path = ['_static']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
+
+# The master toctree document.
+master_doc = 'index'
