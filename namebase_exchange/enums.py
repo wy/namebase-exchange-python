@@ -1,3 +1,6 @@
+"""
+ENUMS are listed in https://github.com/namebasehq/exchange-api-documentation/blob/master/rest-api.md
+"""
 __all__ = ['Symbol', 'Asset', 'OrderType', 'OrderSide', 'Interval']
 
 from enum import Enum
