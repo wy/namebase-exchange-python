@@ -1,3 +1,6 @@
+"""
+Includes Request class for convenience which applies consistent Timeout, Headers and Base URL settings.
+"""
 __all__ = ['get_current_time_milliseconds', 'encode_credentials', 'Request']
 
 import base64
@@ -37,7 +40,7 @@ class Request(object):
     def delete(self, path, json_data=None, params=None):
         """Perform DELETE request"""
         r = requests.delete(url=self.url + path, params=params, json=json_data, timeout=self.timeout,
-                         headers=self.headers)
+                            headers=self.headers)
         r.raise_for_status()
         return r.json()
 
