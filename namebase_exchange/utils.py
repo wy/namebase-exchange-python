@@ -1,3 +1,5 @@
+__all__ = ['get_current_time_milliseconds', 'encode_credentials', 'Request']
+
 import base64
 import requests
 import time
@@ -38,7 +40,6 @@ class Request(object):
                          headers=self.headers)
         r.raise_for_status()
         return r.json()
-
 
     def status(self):
         r = requests.get(url=self.url + "/info", headers=self.headers)

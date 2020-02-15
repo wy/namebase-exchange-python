@@ -13,7 +13,13 @@ Namebase Exchange Api for Python
 </a>
 <a href="/LICENCE">
 <img src="https://img.shields.io/github/license/wy/namebase-exchange-python" alt="MIT Licence"/>
-</a></p>
+</a>
+<a href="https://lgtm.com/projects/g/wy/namebase-exchange-python/alerts/">
+<img src="https://img.shields.io/lgtm/alerts/g/wy/namebase-exchange-python"
+            alt="Total alerts"/></a>
+<a href="https://lgtm.com/projects/g/wy/namebase-exchange-python/context:python">
+<img src="https://img.shields.io/lgtm/grade/python/github/wy/namebase-exchange-python.svg?logo=lgtm&logoWidth=18"
+            alt="Total alerts"/></a></p>
 
 Python 3.6+ client for interacting with Namebase Exchange API.
 
