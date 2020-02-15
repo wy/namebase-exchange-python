@@ -1,6 +1,17 @@
 Namebase Exchange Api for Python
 ==
 
+<p>
+<a href="/issues">
+<img src="https://img.shields.io/github/issues/wy/namebase-exchange-python" alt="Open Issues"/>
+</a>
+<a href="https://pypi.org/project/namebase-exchange/">
+<img src="https://img.shields.io/pypi/v/namebase-exchange.svg" alt="PyPI"/>
+</a>
+<a href="/LICENCE">
+<img src="https://img.shields.io/github/license/wy/namebase-exchange-python" alt="MIT Licence"/>
+</a></p>
+
 Python 3.6+ client for interacting with Namebase Exchange API.
 
 ## Usage
