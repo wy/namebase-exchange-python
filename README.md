@@ -48,7 +48,7 @@ On top of the raw APIs, we also provide the convenience functions:
 
 ### Usage
 
-> from namebase_exchange import *
+> from namebase_exchange.exchange import *
 >
 > exchange = Exchange(YOUR_API_KEY, YOUR_SECRET_KEY)
 >
