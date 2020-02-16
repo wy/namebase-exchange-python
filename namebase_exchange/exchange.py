@@ -4,11 +4,16 @@ Description:
     Implements Python client library for Namebase Exchange API.
     All calls require Authentication through a Bearer Token.
 Usage:
-    from namebase_exchange import Exchange
+    from namebase_exchange.exchange import *
 """
 from typing import Optional
 from namebase_exchange.enums import *
 from namebase_exchange.utils import *
+
+__all__ = ['Exchange', 'Symbol', 'Asset', 'OrderType', 'OrderSide', 'Interval']
+
+DEFAULT_API_ROOT = "https://www.namebase.io/api"
+DEFAULT_API_VERSION = "/v0"
 
 
 class Exchange:

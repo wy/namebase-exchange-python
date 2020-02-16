@@ -5,9 +5,6 @@ __all__ = ['Symbol', 'Asset', 'OrderType', 'OrderSide', 'Interval']
 
 from enum import Enum
 
-DEFAULT_API_ROOT = "https://www.namebase.io/api"
-DEFAULT_API_VERSION = "/v0"
-
 
 class Symbol(Enum):
     HNSBTC = "HNSBTC"
