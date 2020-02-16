@@ -36,6 +36,8 @@ On top of the raw APIs, we also provide the convenience functions:
 - limit_buy: Limit Buy
 - limit_sell: Limit Sell
 
+We've also provided a Websocket Client for the WSS API.
+
 ## Installation
 
 ### Requirements
@@ -48,11 +50,21 @@ On top of the raw APIs, we also provide the convenience functions:
 
 ### Usage
 
-> from namebase_exchange.exchange import *
->
-> exchange = Exchange(YOUR_API_KEY, YOUR_SECRET_KEY)
->
-> exchange.get_depth(Symbol.HNSBTC)
->
-> exchange.market_sell(Symbol.HNSBTC, 500)
+Core REST API for Namebase Exchange
+```python
+from namebase_exchange.exchange import *
+exchange = Exchange("YOUR_API_KEY", "YOUR_SECRET_KEY")
+exchange.get_depth(Symbol.HNSBTC)
+exchange.market_sell(Symbol.HNSBTC, 500)
+```
+
+WebSocket API for Namebase Exchange
+This doesn't need any authorization
+```python
+from namebase_exchange.websocket_data import *
+exchange = ExchangeWS(Endpoint.DEPTH)
+```
+
+You can also pass functions in to do more sophisticated things with the message stream. By default, 
+it just prints out the messages.
 
