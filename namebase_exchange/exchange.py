@@ -29,8 +29,6 @@ class Exchange:
             "Content-Type": 'application/json'
         }
 
-        print(headers)
-
         self.request = Request(api_base_url=api_root + api_version,
                                headers=headers,
                                timeout=30)
