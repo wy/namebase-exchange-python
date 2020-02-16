@@ -3,11 +3,6 @@ import websocket
 from websocket import WebSocketApp
 from namebase_exchange.enums import Endpoint
 
-try:
-    import thread
-except ImportError:
-    import _thread as thread
-
 """
 Simple default functions to print out the message.
 Can do more complicated things as needed.
@@ -43,4 +38,3 @@ class ExchangeWS:
                                          on_error=self.on_error,
                                          on_close=self.on_close)
         self.ws.run_forever()
-
