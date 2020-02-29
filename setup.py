@@ -14,6 +14,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/wy/namebase-exchange-python",
     packages=setuptools.find_packages(),
+    install_requires = ['requests'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
