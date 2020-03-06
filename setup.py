@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="namebase-exchange", # Replace with your own username
-    version="0.0.5",
+    version="0.0.6",
     python_requires='>=3.6',
     author="Wing Chan",
     author_email="wingyungchan@gmail.com",
@@ -14,7 +14,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/wy/namebase-exchange-python",
     packages=setuptools.find_packages(),
-    install_requires = ['requests'],
+    install_requires=['requests'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",

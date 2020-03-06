@@ -55,7 +55,7 @@ Core REST API for Namebase Exchange
 from namebase_exchange.exchange import *
 exchange = Exchange("YOUR_API_KEY", "YOUR_SECRET_KEY")
 exchange.get_depth(Symbol.HNSBTC)
-exchange.market_sell(Symbol.HNSBTC, 500)
+exchange.market_sell(Symbol.HNSBTC, '500')
 ```
 
 WebSocket API for Namebase Exchange
