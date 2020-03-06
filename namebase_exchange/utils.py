@@ -6,7 +6,7 @@ __all__ = ['get_current_time_milliseconds', 'encode_credentials', 'Request']
 import base64
 import requests
 import time
-
+import json
 
 def get_current_time_milliseconds():
     return round(time.time() * 1000)
@@ -34,7 +34,10 @@ class Request(object):
         """Perform POST request"""
         r = requests.post(url=self.url + path, data=data, json=json_data, params=params, timeout=self.timeout,
                           headers=self.headers)
-        r.raise_for_status()
+        try:
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            return json.loads(e.response.content)
         return r.json()
 
     def delete(self, path, json_data=None, params=None):

@@ -293,15 +293,15 @@ class Exchange:
 
         return self.request.get(path='/ticker/supply', params=api_params)
 
-    def new_order(self, symbol: Symbol, side: OrderSide, order_type: OrderType, quantity: float,
-                  price: Optional[float] = None,
+    def new_order(self, symbol: Symbol, side: OrderSide, order_type: OrderType, quantity: str,
+                  price: Optional[str] = None,
                   receive_window: Optional[int] = None):
         """
         Function to send in a new order. Price is only required for Limit orders.
         Execution of this function is as follows::
 
             new_order(symbol=Symbol.HNSBTC, side=OrderSide.SELL, type=OrderType.MARKET,
-            quantity=1000.0)
+            quantity='1000.0')
 
         The expected return result::
 
@@ -339,9 +339,9 @@ class Exchange:
         :param order_type: The desired type of Order.
         :type order_type: OrderType
         :param quantity: The quantity of the base asset.
-        :type quantity: float
+        :type quantity: string representation of decimal
         :param price: The price of the quote asset per 1 unit of base asset. Only mandatory for LIMIT orders.
-        :type price: float
+        :type price: string representation of decimal
         :param receive_window: Optional Receive Window.
         :type receive_window: int
         :return: JSON Dictionary of immediate Order Status
@@ -900,14 +900,14 @@ class Exchange:
 
         return self.request.get(path='/withdraw/history', params=api_params)
 
-    def limit_sell(self, symbol: Symbol, price: float, quantity: int,
+    def limit_sell(self, symbol: Symbol, price: str, quantity: str,
                    receive_window: Optional[int]):
         """
         Function to execute a Limit Sell.
         Execution of this function is as follows::
 
-            limit_sell(symbol=Symbol.HNSBTC, price=0.6,
-            quantity=1000.0)
+            limit_sell(symbol=Symbol.HNSBTC, price='0.6',
+            quantity='1000.0')
 
         The expected return result::
 
@@ -941,9 +941,9 @@ class Exchange:
         :param symbol: The Trading Symbol.
         :type symbol: Symbol
         :param quantity: The quantity of the base asset.
-        :type quantity: float
+        :type quantity: str representation of decimal
         :param price: The price of the quote asset per 1 unit of base asset.
-        :type price: float
+        :type price: str representation of decimal
         :param receive_window: Optional Receive Window.
         :type receive_window: int
         :return: JSON Dictionary of immediate Order Status
@@ -956,14 +956,14 @@ class Exchange:
                               price,
                               receive_window)
 
-    def limit_buy(self, symbol: Symbol, price: float, quantity: int,
+    def limit_buy(self, symbol: Symbol, price: str, quantity: str,
                   receive_window: Optional[int]):
         """
         Function to execute a Limit Buy.
         Execution of this function is as follows::
 
-            limit_buy(symbol=Symbol.HNSBTC, price=0.6,
-            quantity=1000.0)
+            limit_buy(symbol=Symbol.HNSBTC, price='0.6',
+            quantity='1000.0')
 
         The expected return result::
 
@@ -997,9 +997,9 @@ class Exchange:
         :param symbol: The Trading Symbol.
         :type symbol: Symbol
         :param quantity: The quantity of the base asset.
-        :type quantity: float
+        :type quantity: str representation of decimal
         :param price: The price of the quote asset per 1 unit of base asset.
-        :type price: float
+        :type price: str representation of decimal
         :param receive_window: Optional Receive Window.
         :type receive_window: int
         :return: JSON Dictionary of immediate Order Status
@@ -1012,13 +1012,13 @@ class Exchange:
                               price,
                               receive_window)
 
-    def market_sell(self, symbol: Symbol, quantity: int,
+    def market_sell(self, symbol: Symbol, quantity: str,
                     receive_window: Optional[int]):
         """
         Function to execute a Market Sell.
         Execution of this function is as follows::
 
-            market_sell(symbol=Symbol.HNSBTC, quantity=1000.0)
+            market_sell(symbol=Symbol.HNSBTC, quantity='1000.0')
 
         The expected return result::
 
@@ -1052,7 +1052,7 @@ class Exchange:
         :param symbol: The Trading Symbol.
         :type symbol: Symbol
         :param quantity: The quantity of the base asset.
-        :type quantity: float
+        :type quantity: str representation of decimal
         :param receive_window: Optional Receive Window.
         :type receive_window: int
         :return: JSON Dictionary of immediate Order Status
@@ -1064,13 +1064,13 @@ class Exchange:
                               price=None,
                               receive_window=receive_window)
 
-    def market_buy(self, symbol: Symbol, quantity: int,
+    def market_buy(self, symbol: Symbol, quantity: str,
                    receive_window: Optional[int]):
         """
         Function to execute a Market Buy.
         Execution of this function is as follows::
 
-            market_buy(symbol=Symbol.HNSBTC, quantity=1000.0)
+            market_buy(symbol=Symbol.HNSBTC, quantity='1000.0')
 
         The expected return result::
 
@@ -1104,7 +1104,7 @@ class Exchange:
         :param symbol: The Trading Symbol.
         :type symbol: Symbol
         :param quantity: The quantity of the base asset.
-        :type quantity: float
+        :type quantity: str representation of decimal
         :param receive_window: Optional Receive Window.
         :type receive_window: int
         :return: JSON Dictionary of immediate Order Status
