@@ -172,7 +172,7 @@ class Exchange:
         """
         api_params = {
             "symbol": symbol.value,
-            "interval": interval,
+            "interval": interval.value,
             "limit": limit
         }
 
