@@ -35,6 +35,8 @@ On top of the raw APIs, we also provide the convenience functions:
 - market_sell: Market Sell
 - limit_buy: Limit Buy
 - limit_sell: Limit Sell
+- get_dns_settings: Get DNS Settings
+- update_dns_settings: Change DNS Settings
 
 We've also provided a Websocket Client for the WSS API.
 
@@ -56,6 +58,8 @@ from namebase_exchange.exchange import *
 exchange = Exchange("YOUR_API_KEY", "YOUR_SECRET_KEY")
 exchange.get_depth(Symbol.HNSBTC)
 exchange.market_sell(Symbol.HNSBTC, '500')
+exchange.update_dns_settings(domain='YOUR_DOMAIN',
+record_type='TXT', host='@', value='skylink=YOUR_SKYLINK', ttl=0)
 ```
 
 WebSocket API for Namebase Exchange
