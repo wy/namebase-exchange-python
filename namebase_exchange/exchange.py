@@ -1115,3 +1115,65 @@ class Exchange:
                               quantity,
                               price=None,
                               receive_window=receive_window)
+
+    def get_dns_settings(self, domain: str):
+        """
+        Function to return the Handshake DNS settings for a domain. Execution of this function is as follows::
+            # https://github.com/namebasehq/api-documentation/blob/master/dns-settings-api.md
+            get_dns_settings(domain = 'test.testdomain')
+
+        The expected return result::
+
+            [
+                {
+                    "success": boolean,
+                    "currentHeight": integer,
+                    "upToDate": boolean,
+                    "canUseSimpleUi": boolean, // false if the records were set using the advanced settings
+                    "rawNameState": string, // hex of synced blockchain records
+                    "fee": string,
+                    "records": Record[],
+                }
+            ]
+
+        :param domain:
+        :return: List of records
+
+        """
+        return self.request.get(path=f'/dns/domains/{domain}')
+
+    def update_dns_settings(self, domain: str, record_type: str = 'TXT', value: str = '',
+                            host: Optional[str] = None, ttl: Optional[int] = 0) -> dict:
+        """
+        Function to updates the Handshake DNS settings for a domain. Execution of this function is as follows::
+            # https://blog.sia.tech/skynet-handshake-d5d16e6b632f
+            update_dns_settings(domain = 'test.testdomain', record_type = 'TXT',
+                            value = 'AAApJJPnci_CzFnddB076HGu1_C64T6bfoiQqvsiVB5XeQ',
+                            host: '')
+
+        The expected return result::
+
+            [
+                {
+                    "success": boolean,
+                    "txHash": string,
+                    "rawNameState": string, // hex of synced blockchain records
+                    "records": Record[],
+                }
+            ]
+
+        :param value:
+        :param record_type:
+        :param domain:
+        :param host:
+        :return: List of records
+
+        """
+        api_params = {
+            "type": record_type,
+            "host": host,
+            "value": value,
+            "ttl": ttl
+        }
+
+        return self.request.post(path=f'/dns/domains/{domain}', json_data=api_params)
