@@ -1142,14 +1142,14 @@ class Exchange:
         """
         return self.request.get(path=f'/dns/domains/{domain}')
 
-    def update_dns_settings(self, domain: str, record_type: str = 'TXT', value: str = '',
-                            host: Optional[str] = None, ttl: Optional[int] = 0) -> dict:
+    def update_dns_settings(self, domain: str, records: [dict]) -> dict:
         """
         Function to updates the Handshake DNS settings for a domain. Execution of this function is as follows::
             # https://blog.sia.tech/skynet-handshake-d5d16e6b632f
-            update_dns_settings(domain = 'test.testdomain', record_type = 'TXT',
-                            value = 'AAApJJPnci_CzFnddB076HGu1_C64T6bfoiQqvsiVB5XeQ',
-                            host: '')
+            update_dns_settings([{'type':'TXT',
+                                    'host':'',
+                                    'value':'AAApJJPnci_CzFnddB076HGu1_C64T6bfoiQqvsiVB5XeQ',
+                                    'ttl':0}])
 
         The expected return result::
 
@@ -1162,18 +1162,14 @@ class Exchange:
                 }
             ]
 
-        :param value:
-        :param record_type:
-        :param domain:
-        :param host:
+        :param records
+            records consist of a list of records, each record consists of a value, type, and host
+        :param domain
         :return: List of records
 
         """
         api_params = {
-            "type": record_type,
-            "host": host,
-            "value": value,
-            "ttl": ttl
+            "records": records,
         }
 
         return self.request.put(path=f'/dns/domains/{domain}', json_data=api_params)
