@@ -51,3 +51,13 @@ class Request(object):
         r = requests.get(url=self.url + "/info", headers=self.headers)
         r.raise_for_status()
         return r.json()
+
+    def put(self, path, data=None, json_data=None, params=None):
+        """Perform PUT request"""
+        r = requests.put(url=self.url + path, data=data, json=json_data, params=params, timeout=self.timeout,
+                          headers=self.headers)
+        try:
+            r.raise_for_status()
+        except requests.exceptions.HTTPError as e:
+            return json.loads(e.response.content)
+        return r.json()
