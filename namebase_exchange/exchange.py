@@ -1176,4 +1176,4 @@ class Exchange:
             "ttl": ttl
         }
 
-        return self.request.post(path=f'/dns/domains/{domain}', json_data=api_params)
+        return self.request.put(path=f'/dns/domains/{domain}', json_data=api_params)
